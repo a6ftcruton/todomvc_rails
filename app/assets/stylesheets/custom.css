@@ -1,0 +1,13 @@
+li.todo {
+  margin-left: 10%;
+  text-align: left;
+  padding: 10px;
+}
+li.todo a {
+  text-decoration: none;
+  font: 24px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #b3b3b3; 
+}
+#submit {
+  position: absolute;
+}
