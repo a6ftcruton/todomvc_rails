@@ -29,6 +29,10 @@ describe 'todos' do
     expect(page).to have_content "new idea"
   end
 
+  it 'is grayed out when marked as completed: true' do
+    create_new_todo("i will do this now")
+    click_on(".complete")
+  end
   private
 
   def create_new_todo(name)

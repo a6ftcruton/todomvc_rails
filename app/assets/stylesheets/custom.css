@@ -1,13 +1,29 @@
 li.todo {
-  margin-left: 10%;
   text-align: left;
   padding: 10px;
+  position: relative;
 }
 li.todo a {
   text-decoration: none;
   font: 24px 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #b3b3b3; 
 }
-#submit {
+.name {
+  margin-left: 10%;
+}
+.delete-x {
   position: absolute;
+  right: 5%;
+  top: 10px;
+}
+.checkbox {
+  display: none;
+}
+label.check {
+  display: inline-block !important;
+  width: 20px;
+  height: auto;
+  margin: 0  !important;
+  padding: 0 !important;
+  color: #b3b3b3; 
 }

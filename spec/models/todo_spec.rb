@@ -20,4 +20,8 @@ describe 'Todo' do
     expect(next_todo).to be_invalid
   end
 
+  it 'it is not completed by default' do
+    todo = Todo.create(name: "chore")
+    expect(todo.completed).to be_falsey
+  end
 end
