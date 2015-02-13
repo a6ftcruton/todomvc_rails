@@ -5,6 +5,10 @@ class TodosController < ApplicationController
     @todo = Todo.new
   end
 
+  def show
+    @todo = Todo.find(params[:id])
+  end
+
   def create
     todo = Todo.new(name: params[:todo][:name])
     if todo.save! 
@@ -16,10 +20,10 @@ class TodosController < ApplicationController
 
   def update
     todo = Todo.find(params[:id])
-    if todo.update_attributes(name: params[:name])
+    if todo.update(name: params[:todo][:name])
       redirect_to todos_path
     else
-      render :back
+      render :index 
     end
   end
 

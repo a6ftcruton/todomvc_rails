@@ -1,0 +1,6 @@
+<%= form_for @todo, method: :patch do |f| %> 
+  <%= f.text_field :name, placeholder: "What needs to be done?", class: "edit" %>
+  <%= f.submit "Save"  %>
+<% end %>
+
+<%= link_to "All Todos", todos_path %>

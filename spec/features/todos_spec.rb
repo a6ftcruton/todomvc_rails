@@ -18,10 +18,13 @@ describe 'todos' do
     expect(page).to_not have_content "my first todo"
   end
 
-  xit 'edits a todo in the list' do
+  it 'edits a todo in the list' do
     create_new_todo("change me")
     click_on("change me")
-    fill_in(".edit", with: "new idea")
+    find(".edit").set("new idea")
+    click_on("Save")
+
+    expect(current_path).to eq todos_path
     expect(page).to_not have_content "change me"
     expect(page).to have_content "new idea"
   end

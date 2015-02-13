@@ -2,14 +2,14 @@
   <h2>todos</h2>
   <div>
     <%= form_for @todo do |f| %> 
-      <%= f.text_field :name, placeholder: "What needs to be done?", id: "new-todo"  %>
+      <%= f.text_field :name, placeholder: "What needs to be done?", id: "new-todo" %>
       <%= f.submit "Save"  %>
-    <% end %>
+    <% end %>      
   </div>
   <div class="todos-list">
     <% @todos.each do |todo| %>
       <div class="todo">
-        <%= link_to todo.name, todo_path(todo), method: :put, class: "edit" %>
+        <%= link_to todo.name, todo_path(todo) %>
         <%=link_to "X", todo_path(todo), method: :delete %>
       </div>
     <% end %>
