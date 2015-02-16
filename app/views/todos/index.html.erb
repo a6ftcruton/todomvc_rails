@@ -13,8 +13,12 @@
       <ul id="todo-list">
         <% @todos.each do |todo| %>
           <li class="todo">
-            <%= check_box_tag 'completed', "✓", todo.completed, id: "#{todo.id}", class: "checkbox" %>
-            <%= label_tag 'completed', "✓", class: "check" %>
+            <%= form_tag todo_path(todo), method: :patch do %>
+              <%= check_box_tag :completed, true, todo.completed %>
+              <%= submit_tag "Complete" %>
+            <% end %>
+            <%#= check_box_tag 'completed', "✓", todo.completed, id: "#{todo.id}", class: "checkbox" %>
+            <%#= label_tag 'completed', "✓", class: "check" %>
             <%= link_to todo.name, todo_path(todo), class: "name" %>
             <%= link_to "X", todo_path(todo), method: :delete, class: "delete-x" %>
           </li>

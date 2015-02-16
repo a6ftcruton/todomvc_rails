@@ -20,7 +20,7 @@ class TodosController < ApplicationController
 
   def update
     todo = Todo.find(params[:id])
-    if todo.update(name: params[:todo][:name])
+    if todo.update(completed: params[:completed])
       redirect_to todos_path
     else
       render :index 
